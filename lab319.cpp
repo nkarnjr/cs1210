@@ -13,7 +13,6 @@ int main() {
 	int valGreen;
 	int valBlue;
 
-	cout << "Input RGB integer values: ";
 	cin >> valRed;
 	cin >> valGreen;
 	cin >> valBlue;
