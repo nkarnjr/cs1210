@@ -1,6 +1,6 @@
 /*
 	Summary: Subtract the gray value from 
-            RGB codes for Zylabs Lab 2
+            RGB codes for Zylabs Lab 3.19
 	Author:  Nathan Karn
 	Created: September 6, 2024
 */
@@ -38,7 +38,7 @@ int main() {
 		}
 	}
 
-	else {
+	else if (valGreen < valBlue) {
 
 		valRed -= valGreen;
  		valBlue -= valGreen;
@@ -46,6 +46,15 @@ int main() {
 
 		cout << valRed << " " << valGreen << " " << valBlue << "\n";
 	}
+	
+	else {
+ 
+		valRed -= valBlue;
+		valGreen -= valBlue;
+		valBlue = 0;
+ 
+		cout << valRed << " " << valGreen << " " << valBlue << "\n";
+   }
 
 	return 0;
 }
