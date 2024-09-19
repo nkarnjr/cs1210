@@ -16,16 +16,21 @@ int main() {
 
 	cin >> inputVal;	
 
-	if (inputVal > 0) {
-		while (inputVal > 0) {
-			remainderInt = inputVal % 2;
-			inputVal /= 2;
-			remainderStr = to_string(remainderInt);
-			binaryStr = remainderStr + binaryStr;
+	while (inputVal > 0) {
+		remainderInt = inputVal % 2;
+		inputVal /= 2;
+
+		if (remainderInt == 1) {
+			remainderStr = "1";
+		}
+		else if (remainderInt == 0) {
+			remainderStr = "0"; 
 		}
 
-		cout << binaryStr << endl;	
+		binaryStr = remainderStr + binaryStr;
 	}
+
+	cout << binaryStr << endl;	
 
 	return 0;
 }
