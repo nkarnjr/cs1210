@@ -24,10 +24,7 @@ int main() {
 			binaryStr = remainderStr + binaryStr;
 		}
 
-	cout << binaryStr << endl;	
-
-	}
-	else {
+		cout << binaryStr << endl;	
 	}
 
 	return 0;
