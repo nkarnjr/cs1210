@@ -11,7 +11,6 @@ using namespace std;
 int main() {
 	string userStr;
 	int userNum = 0;
-	int count = 0;
 	int i;
 
    cin >> userStr;
@@ -22,23 +21,20 @@ int main() {
 			cout << "no 0" << endl;
 			return 1;
 		}
+
 		if (userStr.at(i) == ',') { 
-			count = count + 1;
-	
-			if (((userStr.find(',', i + 1) < i + 4) || (userStr.find(',', i + 1) > i + 4)) && (i + 4 < userStr.size())) {
-				cout << "no 0" << endl;
-				return 2;
+
+			for (int j = userStr.size() - 1; j >= 0; --j) {
+				if (userStr.at(j) == ',' && (userStr.size() - j) % 4 != 0) {
+					cout << "no 0" << endl;
+					return 2;
 			}
-			if (count == 1 && i >= 4) { 
-				cout << "no 0" << endl;
-				return 3;
 			}
 			userStr.replace(i, 1, "");
 		}
 		}
 		
 	for (int i = 0; i < userStr.size(); ++i) {
-		
 		switch (userStr.at(i)) {
 		
 			case 48:
