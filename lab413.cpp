@@ -9,7 +9,7 @@
 using namespace std;
 
 int main() {
-   string userStr;
+	string userStr;
 	int userNum = 0;
 	int count = 0;
 	int i;
