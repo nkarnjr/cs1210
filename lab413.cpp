@@ -25,11 +25,11 @@ int main() {
 		if (userStr.at(i) == ',') { 
 			count = count + 1;
 	
-			if (userStr.substr(i, 4) < ",000" || ((i + 4 < userStr.size() - 1) && (userStr.at(i + 4) != ','))) {
+			if (userStr.substr(i, 4) < ",000" || ((i + 4 <= userStr.size() - 1) && (userStr.at(i + 4) != ','))) {
 				cout << "no 0" << endl;
 				return 2;
 			}
-			if (count == 1 && i >= 3) { 
+			if (count == 1 && i > 3) { 
 				cout << "no 0" << endl;
 				return 3;
 			}
