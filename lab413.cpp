@@ -13,7 +13,7 @@ int main() {
 	int userNum = 0;
 	int i;
 
-   cin >> userStr;
+	cin >> userStr;
 	
 	for (i = 0; i < userStr.size(); ++i) {
 	
