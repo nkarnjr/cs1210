@@ -1,7 +1,5 @@
 /*
-	Summary: Convert from a correctly typed
-				numerical string to a integer
-				for Zylabs Lab 4.12
+	Summary: Convert from a correctly typed numerical string to a integer for Zylabs Lab 4.12
 	Author:	Nathan Karn
 	Created: September 18, 2024
 */
@@ -64,11 +62,11 @@ int main() {
 		
 			case 53:
 				userNum = userNum + (5 * pow(10, (userStr.size() - 1 - i)));
-            break;
+				break;
 		
 			case 54:
-            userNum = userNum + (6 * pow(10, (userStr.size() - 1 - i)));
-            break;
+				userNum = userNum + (6 * pow(10, (userStr.size() - 1 - i)));
+				break;
 		
 			case 55:
 				userNum = userNum + (7 * pow(10, (userStr.size() - 1 - i)));
