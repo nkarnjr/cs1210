@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
 				lost = true;
 			}
 			if (lost == true) {
-				cout << "Awww, You Lost the Game...\n";
+				cout << "Awww, you lost the game...\n";
 				cout << "The correct sequence was: " << currSequence << endl;
 				return 1;
 			}
@@ -77,7 +77,7 @@ int main(int argc, char **argv) {
 		++round;
 	}
         
-	cout << "Congratulations! You Win the Game!\n";
+	cout << "Congratulations, you win the game!!!\n";
 
 	return 0;
 }
