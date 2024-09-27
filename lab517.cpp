@@ -7,7 +7,7 @@
 #include <cstring>                      // for strlen()
 #include <cstdlib>                      // for random numbers
 #include <unistd.h>                     // for sleep()
-#include "ZyLab.h"                      // for ZyLab Setup
+//#include "ZyLab.h"                      // for ZyLab Setup
 using namespace std;
 
 int main(int argc, char **argv) {
@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
 				lost = true;
 			}
 			if (lost == true) {
-				cout << "Awww, You Lose the Game...\n";
+				cout << "Awww, You Lost the Game...\n";
 				cout << "The correct sequence was: " << currSequence << endl;
 				return 1;
 			}
