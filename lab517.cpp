@@ -7,7 +7,7 @@
 #include <cstring>                      // for strlen()
 #include <cstdlib>                      // for random numbers
 #include <unistd.h>                     // for sleep()
-//#include "ZyLab.h"                      // for ZyLab Setup
+#include "ZyLab.h"                      // for ZyLab Setup
 using namespace std;
 
 int main(int argc, char **argv) {
