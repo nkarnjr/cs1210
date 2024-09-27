@@ -7,7 +7,7 @@
 #include <cstring>                      // for strlen()
 #include <cstdlib>                      // for random numbers
 #include <unistd.h>                     // for sleep()
-#include "ZyLab.h"                      // for ZyLab Setup
+//#include "ZyLab.h"                      // for ZyLab Setup
 using namespace std;
 
 int main(int argc, char **argv) {
@@ -45,29 +45,26 @@ int main(int argc, char **argv) {
 	round = 1;
 	string currSequence;
         
-	for (int i = 0; i < numRounds; ++i) {
+	while (round <= numRounds) {
 		
 		currSequence = "";
                 
-		for (int j = 0; j < round; ++j) {
+		for (int i = 0; i < round; ++i) {
                         
-			currSequence = currSequence + seq[j];
-			cout << seq[j] << flush;
+			currSequence = currSequence + seq[i];
+			cout << seq[i] << flush;
 			sleep(1);
 			cout << "\010." << flush;
 		}
 
 		cout << "\nPlease enter " << round << " characters to match: ";
 
-		for (int k = 0; k < round; ++k) {
+		for (int j = 0; j < round; ++j) {
 			
 			cin >> c;
 			
-			if (c != seq[k]) {
-				lost = true;
-			}
-			if (lost == true) {
-				cout << "Awww, you lost the game...\n";
+			if (c != seq[j]) {
+				cout << "Awww, You Lost the Game...\n";
 				cout << "The correct sequence was: " << currSequence << endl;
 				return 1;
 			}
@@ -77,7 +74,7 @@ int main(int argc, char **argv) {
 		++round;
 	}
         
-	cout << "Congratulations, you win the game!!!\n";
+	cout << "Congratulations! You Win the Game!\n";
 
 	return 0;
 }
