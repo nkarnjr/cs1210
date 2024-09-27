@@ -45,26 +45,29 @@ int main(int argc, char **argv) {
 	round = 1;
 	string currSequence;
         
-	while (round <= numRounds) {
+	for (int i = 0; i < numRounds; ++i) {
 		
 		currSequence = "";
                 
-		for (int i = 0; i < round; ++i) {
+		for (int j = 0; j < round; ++j) {
                         
-			currSequence = currSequence + seq[i];
-			cout << seq[i] << flush;
+			currSequence = currSequence + seq[j];
+			cout << seq[j] << flush;
 			sleep(1);
 			cout << "\010." << flush;
 		}
 
 		cout << "\nPlease enter " << round << " characters to match: ";
 
-		for (int j = 0; j < round; ++j) {
+		for (int k = 0; k < round; ++k) {
 			
 			cin >> c;
 			
-			if (c != seq[j]) {
-				cout << "Awww, You Lost the Game...\n";
+			if (c != seq[k]) {
+				lost = true;
+			}
+			if (lost == true) {
+				cout << "Awww, you lost the game...\n";
 				cout << "The correct sequence was: " << currSequence << endl;
 				return 1;
 			}
@@ -74,7 +77,7 @@ int main(int argc, char **argv) {
 		++round;
 	}
         
-	cout << "Congratulations! You Win the Game!\n";
+	cout << "Congratulations, you win the game!!!\n";
 
 	return 0;
 }
