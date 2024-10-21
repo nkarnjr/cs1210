@@ -40,6 +40,10 @@ int main() {
 		book.at(i) = toupper(book.at(i));
 	}
 
+	if (book == "PSALM") {
+		book.append("S");
+	}
+
 	ifstream inFS;
 	inFS.open("OT.txt");
 	getline(inFS, referenceCheck);
@@ -68,11 +72,11 @@ int main() {
 		escape = false;
 
 		while (!inFS.fail() && !escape) {
-			if (referenceCheck == (psalmsCheck + chapter)) {
-				chaptExists = true;
+			if (referenceCheck.substr(0, 12) == ("THE BOOK OF ")) {
 				escape = true;
 			}
-			else if (referenceCheck.substr(0, 12) == ("THE BOOK OF ")) {
+			else if (referenceCheck == (psalmsCheck + chapter)) {
+				chaptExists = true;
 				escape = true;
 			}
 			getline(inFS, referenceCheck);
@@ -88,11 +92,14 @@ int main() {
 		escape = false;
 
 		while (!inFS.fail() && !escape) {
-			if (referenceCheck.substr(0,verseLength) == verse) {
-				verseExists = true;
+			if (referenceCheck.substr(0, 8) == (psalmsCheck)) {
 				escape = true;
 			}
-			else if (referenceCheck.substr(0, 8) == (psalmsCheck)) {
+			else if (referenceCheck.size() == 0) {
+				escape = true;
+			}
+			else if (referenceCheck.substr(0,verseLength) == verse) {
+				verseExists = true;
 				escape = true;
 			}
 			else {
@@ -109,7 +116,7 @@ int main() {
 	if (escape && verseExists) {
 		referenceOut = referenceCheck;
 		getline(inFS, referenceCheck);
-		while(!isdigit(referenceCheck.at(0))) {
+		while(!isdigit(referenceCheck.at(0)) && !inFS.eof()) {
 			referenceOut.append(referenceCheck);
 		}
 		
