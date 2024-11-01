@@ -26,22 +26,27 @@ int main() {
 	vector<string> coinNames = {" nickel", " dime", " quarter"};
    
    cin >> inputVal;
-	exactChange(inputVal, coinVals);
+
+	if (inputVal == 0) {
+		cout << "no change";
+	}
+	else {
+		exactChange(inputVal, coinVals);
 	
-	for (int i = 0; i < 4; ++i) {
-		if (i == 0 && coinVals[i] > 1) {
-			cout << coinVals [i] << " pennies\n";
-		}
-		else if (i == 0) {
-			cout << coinVals[i] << " penny\n";
-		}
-		else if (coinVals [i] > 1) {
-			cout << coinVals[i] << coinNames[i-1] << "s\n";
-		}
-		else {
-			cout << coinVals[i] << coinNames[i-1] << endl;
+		for (int i = 0; i < 4; ++i) {
+			if (i == 0 && coinVals[i] > 1) {
+				cout << coinVals [i] << " pennies\n";
+			}
+			else if (i == 0) {
+				cout << coinVals[i] << " penny\n";
+			}
+			else if (coinVals [i] > 1) {
+				cout << coinVals[i] << coinNames[i-1] << "s\n";
+			}
+			else if (coinVals [i] > 0) {
+				cout << coinVals[i] << coinNames[i-1] << endl;
+			}
 		}
 	}
-
    return 0;
 }
