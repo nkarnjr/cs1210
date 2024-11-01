@@ -28,7 +28,7 @@ int main() {
 	cin >> inputVal;
 
 	if (inputVal == 0) {
-		cout << "no change";
+		cout << "no change\n";
 	}
 	else {
 		exactChange(inputVal, coinVals);
@@ -37,7 +37,7 @@ int main() {
 			if (i == 0 && coinVals[i] > 1) {
 				cout << coinVals [i] << " pennies\n";
 			}
-			else if (i == 0) {
+			else if (i == 0 && coinVals[i] == 1) {
 				cout << coinVals[i] << " penny\n";
 			}
 			else if (coinVals [i] > 1) {
