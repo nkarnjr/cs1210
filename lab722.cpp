@@ -21,11 +21,11 @@ void exactChange(int userTotal, vector<int>& coinVals) {
 }
 
 int main() {
-   int inputVal;
-   vector<int> coinVals(4);
+	int inputVal;
+	vector<int> coinVals(4);
 	vector<string> coinNames = {" nickel", " dime", " quarter"};
    
-   cin >> inputVal;
+	cin >> inputVal;
 
 	if (inputVal == 0) {
 		cout << "no change";
