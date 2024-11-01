@@ -1,5 +1,5 @@
 /*********************************************************
-* Summary:	Sort a vector of numbers in descending order for Zylabs Lab 7.23
+* Summary:	Convert from Decimal to Binary using functions for Zylabs Lab 7.24
 *
 * Author:	Nathan Karn Jr.
 * Created:	November 1, 2024
@@ -7,40 +7,39 @@
 ********************************************************/
 
 #include <iostream>
-#include <vector>
+#include <string>
 
 using namespace std;
 
-void sortVector(vector<int>& myVec) {
-	int compVal;
-	
-	for (int i = 0; i < myVec.size(); ++i) {
-		for (int j = 0; j < myVec.size(); ++j) {
-			if (myVec[i] > myVec[j]) {
-				compVal = myVec[i];
-				myVec[i] = myVec[j];
-				myVec[j] = compVal;
-			}
+string intToReverseBinary(int integerValue) {
+	string binary = "";
+	while (integerValue > 0) {
+		if (integerValue % 2 == 0) {
+			binary.append("0");
 		}
+		else {
+			binary.append("1");
+		}
+		integerValue /= 2;
 	}
+	return binary;
+}
+
+string stringReverse(string userString) {
+	string binary = "";
+	string temp = "";
+	for (int i = userString.size() - 1; i >= 0; --i) {
+		temp = userString.at(i);
+		binary.append(temp);
+	}
+	return binary;
 }
 
 int main() {
-   int numInputs;
-	cin >> numInputs;
+	int inputValue;
 	
-	vector<int> myVec(numInputs);
-	
-	for (int i = 0; i < numInputs; ++i) {
-		cin >> myVec[i];
-	}
-	
-	sortVector(myVec);
+	cin >> inputValue;
+	cout << stringReverse(intToReverseBinary(inputValue)) << endl;
 
-	for (int i = 0; i < numInputs; ++i) {
-		cout << myVec[i] << ",";
-	}
-	cout << endl;
-	
    return 0;
 }
