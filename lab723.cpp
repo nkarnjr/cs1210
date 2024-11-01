@@ -38,7 +38,7 @@ int main() {
 	sortVector(myVec);
 
 	for (int i = 0; i < numInputs; ++i) {
-		cout << myVec[i] << ", ";
+		cout << myVec[i] << ",";
 	}
 	cout << endl;
 	
