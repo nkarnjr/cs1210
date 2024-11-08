@@ -18,11 +18,11 @@ void printPattern(int rows, string str, string chars, int nextChar = 1) {
 	if (rows == 0) {
 		return;
 	}
-	else if (nextChar >= chars.size() - 1) {
-		nextChar = 1;
+	else if (nextChar >= chars.size()) {
+		nextChar = 0;
 	}
 	cout << str << endl;
-	str.append(chars.substr(0, nextChar));
+	str.append(chars.substr(nextChar, 1));
 	nextChar++;
 	rows--;
 	printPattern(rows, str, chars, nextChar);
