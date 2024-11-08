@@ -1,6 +1,6 @@
 /*********************************************************
 * Summary:	Take in two number inputs and create a number
-*				pattern using a recursive function for Zylabs Lab 10.9
+*		pattern using a recursive function for Zylabs Lab 10.9
 *
 * Author:	Nathan Karn Jr.
 * Created:	November 7, 2024
