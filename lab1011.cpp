@@ -11,16 +11,22 @@
 
 using namespace std;
 
-void printChange(int amt, const vector<int> &d, int currDenom) {
+void printChange(int amt, const vector<int>& d, int currDenom) {
 	
-	if (amt == 0)	{
+	if (currDenom > d.size() - 1) {
 		return;
 	}
-	else if (amt >= &d.at(currDenom)) {
-		cout << amt / &d.at(currDenom) << " @ " << &d.at(currDenom) << endl;
-		amt % &d.at(currDenom);
+	else if (amt >= d.at(currDenom)) {
+		cout << amt / d.at(currDenom) << " @ " << d.at(currDenom) << endl;
+		amt %= d.at(currDenom);
+		currDenom++;
+		printChange(amt, d, currDenom);
 	}
-	currDenom++;
+	else {
+		cout << 0 << " @ " << d.at(currDenom) << endl;
+		currDenom++;
+		printChange(amt, d, currDenom);
+	}
 }
 
 int main() {
